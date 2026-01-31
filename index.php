@@ -958,5 +958,232 @@ input {
   font-weight: 600;
 }
 </style>
+           <script src="script.js"></script>
+    <!-- POPUP OVERLAY -->
+<div id="orderPopup" class="popup-overlay">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closePopup()">×</button>
+
+    <!-- FORM CONTENT -->
+    <div id="formContent">
+      <h2>Secure Your Order Today</h2>
+      <p class="subtitle">
+        Fill in your details below to continue to our secure checkout
+      </p>
+
+      <form onsubmit="handleSubmit(event)">
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email Address</label>
+        <input type="email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" required>
+
+        <label>Country</label>
+        <input type="text" required>
+
+        <button type="submit" class="cta-btn">
+          Continue to Secure Checkout
+        </button>
+      </form>
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+    <div id="successContent" class="success-box">
+      <div class="checkmark">✓</div>
+      <h3>Success!</h3>
+      <p>Your discount code is sent to your Gmail. Thank you!</p>
+      <div class="redirecting">Redirecting...</div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* OVERLAY */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* POPUP BOX */
+.popup-box {
+  background: #f3fffb;
+  width: 420px;
+  max-width: 90%;
+  padding: 30px;
+  border-radius: 16px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* CLOSE */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* HEADINGS */
+.popup-box h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+label {
+  font-weight: 600;
+  margin-top: 12px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #eef4ff;
+}
+
+/* CTA */
+.cta-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* SUCCESS BOX */
+.success-box {
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+  border: 2px solid #22c55e;
+  border-radius: 16px;
+  background: #ecfdf5;
+}
+
+.checkmark {
+  font-size: 42px;
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+.success-box h3 {
+  color: #166534;
+  margin-bottom: 8px;
+}
+
+.success-box p {
+  color: #166534;
+  margin-bottom: 20px;
+}
+
+.redirecting {
+  padding: 14px;
+  background: #0f766e;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+}
+</style>
+
+<script src="script.js"></script>
+    <!-- AGE VERIFICATION POPUP -->
+<div id="agePopup" style="
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(8px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:999999;
+">
+
+  <div style="
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    width:90%;
+    max-width:350px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  ">
+    <h2>Are you 18+?</h2>
+    <p style="font-size:14px;color:#555;">
+      You must be 18 years or older to enter this website.
+    </p>
+
+    <div style="margin-top:20px;display:flex;gap:15px;">
+      <button
+        style="flex:1;padding:12px;font-size:16px;border-radius:8px;background:#16a34a;color:#fff;border:none;cursor:pointer;"
+        onclick="goYes()"
+      >
+        Yes
+      </button>
+
+      <button
+        style="flex:1;padding:12px;font-size:16px;border-radius:8px;background:#dc2626;color:#fff;border:none;cursor:pointer;"
+        onclick="goNo()"
+      >
+        No
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ✅ YOUR URLs
+  const YES_URL = "https://testing-s5vvc.ondigitalocean.app";
+  const NO_URL  = "https://testing-s5vvc.ondigitalocean.app";
+
+  // Pass all URL params (UTMs, refs, etc.)
+  const params = window.location.search || "";
+
+  function goYes() {
+    window.location.href = YES_URL + params;
+  }
+
+  function goNo() {
+    window.location.href = NO_URL + params;
+  }
+</script>
+<script>
+function trackYes() {
+    if (typeof rtkPostback === "function") {
+        rtkPostback({ sum: "AgeYes" });
+    }
+}
+
+function trackNo() {
+    if (typeof rtkPostback === "function") {
+        rtkPostback({ sum: "AgeNo" });
+    }
+}
+</script>
+</body>
+</html>
 </body>
 </html>
