@@ -1156,8 +1156,8 @@ input {
 
 <script>
   // ✅ YOUR URLs
-  const YES_URL = "https://testing-s5vvc.ondigitalocean.app";
-  const NO_URL  = "https://testing-s5vvc.ondigitalocean.app";
+  const YES_URL = "https://testingphp-2-edy7c.ondigitalocean.app/";
+  const NO_URL  = "https://testingphp-2-edy7c.ondigitalocean.app/";
 
   // Pass all URL params (UTMs, refs, etc.)
   const params = window.location.search || "";
